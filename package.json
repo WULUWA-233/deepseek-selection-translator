@@ -1,0 +1,16 @@
+{
+  "name": "deepseek-selection-translator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "deepseek-selection-translator",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "test": "node --test --test-isolation=none tests/*.test.cjs"
+  },
+  "devDependencies": {
+    "jsdom": "30.1.1"
+  }
+}

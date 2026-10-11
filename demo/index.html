@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>划词翻译交互演示</title>
+<style>body{max-width:760px;margin:64px auto;padding:24px;font:18px/1.9 system-ui;background:#f5f7fc;color:#26334c}article{background:white;padding:32px;border-radius:16px}small{color:#667}</style>
+<h1>划词翻译 · 交互演示</h1><small>固定译文演示，无需 Key，不会调用外部 API。</small>
+<article><p>请选择下面的英文，点击浮动的「译」按钮。</p><p>Small tools can make everyday reading easier.</p><p>选词、翻译浮窗、复制和关闭均使用仓库中的实际内容脚本。</p></article>
+<script>
+window.chrome = { runtime: { sendMessage: async message => {
+  if (message.type === 'DSIT_CANCEL') return {ok:true};
+  await new Promise(resolve => setTimeout(resolve, 350));
+  return {ok:true, translation:'小工具可以让日常阅读变得更轻松。\n（固定演示译文，未调用真实 API）'};
+} } };
+</script><script src="../extension/content.js"></script></html>

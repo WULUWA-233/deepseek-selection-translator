@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "DeepSeek 划词翻译",
+  "version": "0.3.0",
+  "description": "划词后点击悬浮图标，使用自己的 DeepSeek API Key 查看翻译。",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://api.deepseek.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "DeepSeek 划词翻译",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "minimum_chrome_version": "102"
+}

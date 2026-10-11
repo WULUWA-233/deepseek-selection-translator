@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>闪译双语设置</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="logo">闪</div>
+        <div><h1>DeepSeek 划词翻译</h1><p>划词后点击悬浮图标，在小窗口中查看翻译</p></div>
+      </header>
+
+      <section>
+        <label for="apiKey">DeepSeek API Key</label>
+        <div class="key-row">
+          <input id="apiKey" type="password" autocomplete="off" placeholder="sk-..." />
+          <button id="reveal" class="secondary" type="button">显示</button>
+        </div>
+        <p class="help">Key 保存在当前浏览器的扩展存储中，只发送给 api.deepseek.com。</p>
+      </section>
+
+      <section class="grid">
+        <div>
+          <label for="model">模型</label>
+          <input id="model" value="deepseek-flash" />
+        </div>
+        <div>
+          <label for="targetLanguage">目标语言</label>
+          <select id="targetLanguage">
+            <option>简体中文</option><option>繁體中文</option><option>English</option>
+            <option>日本語</option><option>한국어</option><option>Français</option>
+            <option>Deutsch</option><option>Español</option>
+          </select>
+        </div>
+      </section>
+
+      <div class="actions">
+        <button id="save" class="primary" type="button">保存设置</button>
+        <button id="test" class="secondary" type="button">测试连接</button>
+        <span id="status" role="status"></span>
+      </div>
+    </main>
+    <script src="options.js"></script>
+  </body>
+</html>
